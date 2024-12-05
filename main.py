@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 
 # Load the pre-trained model
-with open("D:/AI Classification Projects/Raining Prediction Model/rainfall_prediction_model.pkl", "rb") as file:
+with open("rainfall_prediction_model.pkl", "rb") as file:
     model_data = pickle.load(file)
     model = model_data["model"]
     feature_names = model_data["feature_names"]
