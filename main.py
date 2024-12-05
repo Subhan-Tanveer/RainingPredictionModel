@@ -18,7 +18,7 @@ audio_file_path = "D:/path_to_your_audio_file/your_audio_file.wav"  # Update thi
 # Embed audio HTML with autoplay, loop, and no controls
 st.markdown(f"""
     <audio autoplay loop style="position:fixed; top:0; left:0; width:0; height:0; opacity:0; z-index:-1;">
-        <source src="file:///{audio_file_path}" type="audio/wav">
+        <source src="file:///{mixkit-rain-and-thunder-storm-2390.wav}" type="audio/wav">
         Your browser does not support the audio element.
     </audio>
 """, unsafe_allow_html=True)
