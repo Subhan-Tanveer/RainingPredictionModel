@@ -11,7 +11,7 @@ with open("rainfall_prediction_model.pkl", "rb") as file:
 # Add page title and background audio
 st.title("🌦️ Rainfall Prediction App")
 st.markdown("**Predict whether it will rain based on weather conditions!** ☔")
-audio_file_path = "D:/path_to_your_audio_file/your_audio_file.wav"  # Update this path as needed
+audio_file_path = "mixkit-rain-and-thunder-storm-2390.wav"  # Update this path as needed
 with open(audio_file_path, "rb") as audio_file:
     st.audio(audio_file, format="audio/wav")
 
