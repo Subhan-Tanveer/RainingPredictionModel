@@ -8,18 +8,17 @@ with open("rainfall_prediction_model.pkl", "rb") as file:
     model = model_data["model"]
     feature_names = model_data["feature_names"]
 
-# Add page title
+# Add page title and background audio
 st.title("🌦️ Rainfall Prediction App")
 st.markdown("**Predict whether it will rain based on weather conditions!** ☔")
 
-# Path to your audio file
-audio_file_path = "D:/path_to_your_audio_file/your_audio_file.wav"  # Update this path
+# Use raw URL for the audio file hosted on GitHub
+audio_url = "https://raw.githubusercontent.com/username/repository/branch/path_to_file/rain_sound.wav"  # Replace with your raw GitHub URL
 
-# Embed audio HTML with autoplay, loop, and no controls
+# HTML to play the audio in the background with opacity 0 and looping
 st.markdown(f"""
-    <audio autoplay loop style="position:fixed; top:0; left:0; width:0; height:0; opacity:0; z-index:-1;">
-        <source src="file:///{mixkit-rain-and-thunder-storm-2390.wav}" type="audio/wav">
-        Your browser does not support the audio element.
+    <audio autoplay loop style="position:fixed; top:0; left:0; width:0; height:0; opacity:0;">
+        <source src="{audio_url}" type="audio/wav">
     </audio>
 """, unsafe_allow_html=True)
 
