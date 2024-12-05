@@ -8,15 +8,17 @@ with open("rainfall_prediction_model.pkl", "rb") as file:
     model = model_data["model"]
     feature_names = model_data["feature_names"]
 
-# Add page title and background audio
+# Add page title
 st.title("🌦️ Rainfall Prediction App")
 st.markdown("**Predict whether it will rain based on weather conditions!** ☔")
-audio_file_path = "mixkit-rain-and-thunder-storm-2390.wav"  # Update this path as needed
-with open(audio_file_path, "rb") as audio_file:
-    st.audio(audio_file, format="audio/wav")
 
-# CSS for custom background
-page_bg_img = """
+# Background audio for .wav file with autoplay and looping
+audio_file_path = "D:/path_to_your_audio_file/your_audio_file.wav"  # Update this path as needed
+with open(audio_file_path, "rb") as audio_file:
+    st.audio(audio_file, format="audio/wav", start_time=0, loop=True)
+
+# CSS to hide the audio controls and autoplay in the background
+page_bg_audio = """
 <style>
 [data-testid="stAppViewContainer"] {
     background-image: url("https://i.gifer.com/N8i8.gif");
@@ -29,9 +31,21 @@ page_bg_img = """
 [data-testid="stSidebar"] {
     background: rgba(0, 0, 0, 0);
 }
+
+/* Hide the audio controls */
+audio {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
 </style>
 """
-st.markdown(page_bg_img, unsafe_allow_html=True)
+st.markdown(page_bg_audio, unsafe_allow_html=True)
 
 # Input section header
 st.header("🌤️ Enter the Weather Details Below")
@@ -51,12 +65,14 @@ input_df = pd.DataFrame([input_data], columns=feature_names)
 
 # Predict the outcome when the button is clicked
 if st.button("🚀 Predict"):
-    prediction = model.predict(input_df)
-
-    if prediction[0] == 1:
-        st.success("🌧️ Prediction: **Rainfall** is likely! 🌈")
-    else:
-        st.success("☀️ Prediction: **No Rainfall** expected! Enjoy the clear skies! 😎")
+    try:
+        prediction = model.predict(input_df)
+        if prediction[0] == 1:
+            st.success("🌧️ Prediction: **Rainfall** is likely! 🌈")
+        else:
+            st.success("☀️ Prediction: **No Rainfall** expected! Enjoy the clear skies! 😎")
+    except Exception as e:
+        st.error(f"Error: {e}")
 
 # Display additional model details
 st.subheader("📖 About the Model")
