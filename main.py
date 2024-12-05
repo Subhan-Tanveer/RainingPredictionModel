@@ -18,7 +18,7 @@ audio_url = "https://github.com/Subhan-Tanveer/RainingPredictionModel/raw/refs/h
 # HTML to play the audio in the background with opacity 0 and looping
 st.markdown(f"""
     <audio autoplay loop style="position:fixed; top:0; left:0; width:0; height:0; opacity:0;">
-        <source src="{audio_url}" type="audio/wav">
+        <source src="https://github.com/Subhan-Tanveer/RainingPredictionModel/raw/refs/heads/main/mixkit-rain-and-thunder-storm-2390.wav" type="audio/wav">
     </audio>
 """, unsafe_allow_html=True)
 
