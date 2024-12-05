@@ -13,7 +13,7 @@ st.title("🌦️ Rainfall Prediction App")
 st.markdown("**Predict whether it will rain based on weather conditions!** ☔")
 
 # Background audio for .wav file with autoplay and looping
-audio_file_path = "D:/path_to_your_audio_file/your_audio_file.wav"  # Update this path as needed
+audio_file_path = "mixkit-rain-and-thunder-storm-2390.wav"  # Update this path as needed
 with open(audio_file_path, "rb") as audio_file:
     st.audio(audio_file, format="audio/wav", start_time=0, loop=True)
 
