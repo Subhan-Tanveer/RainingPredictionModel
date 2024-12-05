@@ -13,14 +13,11 @@ st.title("🌦️ Rainfall Prediction App")
 st.markdown("**Predict whether it will rain based on weather conditions!** ☔")
 
 # Raw URL for the audio file hosted on GitHub (make sure it's a raw URL)
-audio_url = "https://raw.githubusercontent.com/Subhan-Tanveer/RainingPredictionModel/main/mixkit-rain-and-thunder-storm-2390.wav"  # Replace with your raw GitHub URL
+audio_url = "https://raw.githubusercontent.com/username/repository/branch/path_to_file/mixkit-rain-and-thunder-storm-2390.wav"  # Replace with your raw GitHub URL
 
-# HTML to play the audio in the background with autoplay and loop enabled
-st.markdown(f"""
-    <audio autoplay loop style="position:fixed; top:0; left:0; width:0; height:0; opacity:0;">
-        <source src="{audio_url}" type="audio/wav">
-    </audio>
-""", unsafe_allow_html=True)
+# Streamlit audio component (handles audio more effectively)
+# Use autoplay=True to start the audio automatically when the page loads.
+st.audio(audio_url, format='audio/wav', autoplay=True, loop=True)
 
 # CSS for custom background
 page_bg_img = """
