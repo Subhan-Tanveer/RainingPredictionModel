@@ -2,6 +2,13 @@ import streamlit as st
 import pandas as pd
 import pickle
 
+
+st.set_page_config(
+    page_title="Rainfall Prediction App",  # This is the title of the tab
+    page_icon="🌦️",  # URL to your favicon image
+    layout="wide"  # You can choose 'centered' or 'wide'
+)
+
 # Load the pre-trained model
 with open("rainfall_prediction_model.pkl", "rb") as file:
     model_data = pickle.load(file)
