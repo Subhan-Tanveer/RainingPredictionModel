@@ -13,7 +13,7 @@ st.title("🌦️ Rainfall Prediction App")
 st.markdown("**Predict whether it will rain based on weather conditions!** ☔")
 
 # Raw URL for the audio file hosted on GitHub (make sure it's a raw URL)
-audio_url = "https://raw.githubusercontent.com/username/repository/branch/path_to_file/mixkit-rain-and-thunder-storm-2390.wav"  # Replace with your raw GitHub URL
+audio_url = "mixkit-rain-and-thunder-storm-2390.wav"  # Replace with your raw GitHub URL
 
 # Streamlit audio component (handles audio more effectively)
 # Use autoplay=True to start the audio automatically when the page loads.
