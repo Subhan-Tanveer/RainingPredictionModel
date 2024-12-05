@@ -17,7 +17,7 @@ audio_url = "mixkit-rain-and-thunder-storm-2390.wav"  # Replace with your raw Gi
 
 # Streamlit audio component (handles audio more effectively)
 # Use autoplay=True to start the audio automatically when the page loads.
-st.audio(audio_url, format='audio/wav', autoplay=True, loop=True)
+st.audio(audio_url, format='audio/wav', autoplay=True, loop=True, start_time=0)
 
 # CSS for custom background
 page_bg_img = """
