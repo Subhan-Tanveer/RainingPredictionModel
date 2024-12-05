@@ -8,15 +8,19 @@ with open("rainfall_prediction_model.pkl", "rb") as file:
     model = model_data["model"]
     feature_names = model_data["feature_names"]
 
-# Add page title and background audio
+# Add page title
 st.title("🌦️ Rainfall Prediction App")
 st.markdown("**Predict whether it will rain based on weather conditions!** ☔")
 
-# Raw URL for the audio file hosted on GitHub
-audio_url = "mixkit-rain-and-thunder-storm-2390.wav"  # Replace with your raw GitHub URL
+# Raw URL for the audio file hosted on GitHub (make sure it's a raw URL)
+audio_url = "https://raw.githubusercontent.com/username/repository/branch/path_to_file/mixkit-rain-and-thunder-storm-2390.wav"  # Replace with your raw GitHub URL
 
-# Streamlit audio component (handles audio more effectively)
-st.audio(audio_url, format='audio/wav', autoplay=True, loop=True)
+# HTML to play the audio in the background with autoplay and loop enabled
+st.markdown(f"""
+    <audio autoplay loop style="position:fixed; top:0; left:0; width:0; height:0; opacity:0;">
+        <source src="{audio_url}" type="audio/wav">
+    </audio>
+""", unsafe_allow_html=True)
 
 # CSS for custom background
 page_bg_img = """
@@ -32,14 +36,8 @@ page_bg_img = """
 [data-testid="stSidebar"] {
     background: rgba(0, 0, 0, 0);
 }
-
-[data-testid="stAudio"] {
-    opacity: 0;
-}
 </style>
 """
-
-
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Input section header
