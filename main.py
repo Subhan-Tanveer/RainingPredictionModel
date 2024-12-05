@@ -33,8 +33,15 @@ page_bg_img = """
 [data-testid="stSidebar"] {
     background: rgba(0, 0, 0, 0);
 }
+
+[data-testid="stAudio"] {
+    opacity: 0;
+}
 </style>
 """
+
+
+
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Input section header
