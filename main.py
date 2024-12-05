@@ -12,15 +12,11 @@ with open("rainfall_prediction_model.pkl", "rb") as file:
 st.title("🌦️ Rainfall Prediction App")
 st.markdown("**Predict whether it will rain based on weather conditions!** ☔")
 
-# Use raw URL for the audio file hosted on GitHub
-audio_url = "https://drive.google.com/file/d/1ezW3ZB4yQs8g6Zhsg1RBdeWyF-crnmtE/view?usp=sharing"  # Replace with your raw GitHub URL
+# Raw URL for the audio file hosted on GitHub
+audio_url = "https://raw.githubusercontent.com/username/repository/branch/path_to_file/mixkit-rain-and-thunder-storm-2390.wav"  # Replace with your raw GitHub URL
 
-# HTML to play the audio in the background with opacity 0 and looping
-st.markdown(f"""
-    <audio autoplay loop style="position:fixed; top:0; left:0; width:0; height:0; opacity:0;">
-        <source src="https://drive.google.com/file/d/1ezW3ZB4yQs8g6Zhsg1RBdeWyF-crnmtE/view?usp=sharing" type="audio/wav">
-    </audio>
-""", unsafe_allow_html=True)
+# Streamlit audio component (handles audio more effectively)
+st.audio(audio_url, format='audio/wav', autoplay=True, loop=True)
 
 # CSS for custom background
 page_bg_img = """
